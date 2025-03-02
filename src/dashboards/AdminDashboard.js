@@ -19,7 +19,7 @@ const AdminDashboard = () => {
   const handleUpdateStatus = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/tickets/${id}`,
+        `https://ticketing-system-backend-86iz.onrender.com/api/tickets/${id}`,
         { status },
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },

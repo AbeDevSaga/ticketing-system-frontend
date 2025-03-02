@@ -5,7 +5,7 @@ export const fetchTickets = createAsyncThunk(
   "tickets/fetchTickets",
   async (_, { getState }) => {
     const { token } = getState().auth;
-    const res = await axios.get("http://localhost:5000/api/tickets", {
+    const res = await axios.get("https://ticketing-system-backend-86iz.onrender.com/api/tickets", {
       headers: { Authorization: `Bearer ${token}` },
     });
     return res.data;
@@ -16,7 +16,7 @@ export const createTicket = createAsyncThunk(
   "tickets/createTicket",
   async (ticketData, { getState }) => {
     const { token } = getState().auth;
-    const res = await axios.post("http://localhost:5000/api/tickets", ticketData, {
+    const res = await axios.post("https://ticketing-system-backend-86iz.onrender.com/api/tickets", ticketData, {
       headers: { Authorization: `Bearer ${token}` },
     });
     return res.data;
